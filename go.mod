@@ -1,6 +1,6 @@
 module github.com/xtdlib/sqlitex
 
-go 1.22.3
+go 1.18
 
 require (
 	github.com/jmoiron/sqlx v1.4.0
