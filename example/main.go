@@ -8,8 +8,7 @@ import (
 
 var schema = `
 CREATE TABLE IF NOT EXISTS person (
-    first_name text,
-    last_name text
+    first_name text
 );
 
 CREATE TABLE IF NOT EXISTS person2 (
