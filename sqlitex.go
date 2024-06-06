@@ -2,6 +2,7 @@ package sqlitex
 
 import (
 	"database/sql"
+	"errors"
 
 	"github.com/jmoiron/sqlx"
 	_ "modernc.org/sqlite"
@@ -44,6 +45,10 @@ func (db *DB) MustQueryRowx(query string, args ...interface{}) *sqlx.Row {
 		panic(row.Err())
 	}
 	return row
+}
+
+func IsErrNoRows(err error) bool {
+	return errors.Is(err, sql.ErrNoRows)
 }
 
 func must(err error) {
