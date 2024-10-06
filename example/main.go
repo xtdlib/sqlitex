@@ -24,7 +24,7 @@ type Person struct {
 }
 
 func main() {
-	db := sqlitex.New("file:example.db")
+	db := sqlitex.MustOpen("file:example.db")
 	db.MustExec(schema)
 
 	persons := []Person{}

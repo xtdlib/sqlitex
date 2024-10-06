@@ -19,7 +19,7 @@ type Data struct {
 }
 
 func main() {
-	db := sqlitex.New("file:example.db")
+	db := sqlitex.MustOpen("file:example.db")
 	db.MustExec(schema)
 	db.MustExec(`insert into xxx values ($1, $2)`, "xxx", []byte{3, 0, 4})
 
